@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모두의 HTML/CSS</title>
+</head>
+<body>
+  <header>
+    <h1>모두의 HTML/CSS</h1>
+    <nav>
+      <ul>
+        <li><a href="">HOME</a></li>
+        <li><a href="">HTML</a></li>
+        <li><a href="">CSS</a></li>
+        <li><a href="">JavaScript</a></li>
+      </ul>
+    </nav>
+    <!-- NOTE: 검색버튼을 그냥 버튼 말고 article과 form을 활용. -->
+    <article>
+      <h2>사이트 내 검색</h2>
+      <form action="" method="">
+        <input type="search">
+        <button type="submit">
+          <img src="" alt="검색창 열기">
+        </button>
+      </form>
+    </article>
+  </header>
+
+  <!-- NOTE: main 까먹지 말자. -->
+  <main>
+    <section>
+      <img src="" alt="">
+      <h2>모두의 HTML/CSS</h2>
+      <strong>HELLO WORLD! :)</strong>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam ab quas voluptates vel</p>
+      <a href="">회원가입</a>
+      <a href="">로그인</a>
+      <aside>
+        <a href="">M.B.I.T. 강의 보러가기</a>
+        <a href="">30분 요약강좌 보러가기</a>
+      </aside>
+    </section>
+  
+    <section>
+      <h2>웹 언어와 하루 스케쥴</h2>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Hypertext Markup Language 하이퍼텍스트 마크업 언어</dd>
+        <dd>웹을 이루는 가장 기초적인 구성 요소로, 웹 콘텐츠의 의미와 구조를 정의할 때 사용</dd>
+        <dt>CSS</dt>
+        <dd>Cascading Style Sheets</dd>
+        <dd>HTML이나 XML(XML의 방언인 SVG, XHTML 포함)로 작성된 문서의 표시 방법을 기술하기 위한 스타일 시트 언어</dd>
+        <dt>JavaScript</dt>
+        <dd>일급 함수를 사용하는 가벼운 객체 지향 인터프리터 언어</dd>
+        <dd>웹페이지의 스크립트 언어로 잘 알려져 있지만, 브라우저가 아닌 환경에서도 많이 사용됨</dd>
+      </dl>
+      <!-- NOTE: ol로 묶을 필요가 있는가? -->
+      <ol>
+        <li>
+          <!-- NOTE: time의 속성 datetime 까먹지 말자. -->
+          <time datetime="05:00">오전 5:00</time>
+          <strong>헛둘셋넷 열심히 운동하기</strong>
+          <p>amet consectetur adipisicing elit.</p>
+          <img src="" alt="">
+        </li>
+        <li>
+          <time datetime="09:00">오전 9:00</time>
+          <strong>지친 몸 이끌고 출근하기</strong>
+          <p>amet consectetur adipisicing elit.</p>
+          <img src="" alt="">
+        </li>
+        <li>
+          <time datetime="18:00">오후 6:00</time>
+          <strong>치킨과 함께하는 씐나는 퇴근</strong>
+          <p>amet consectetur adipisicing elit.</p>
+          <img src="" alt="">
+        </li>
+      </ol>
+    </section>
+    
+    <section>
+      <h2>게시판</h2>
+      <!-- 아래 탭 버튼 세개를 리스트로 묶는 것과 묶지 않는 것의 차이? -->
+      <ol>
+        <!-- button의 타입이 submit이 아닐시 까먹지말자. -->
+        <li><button type="button">공지사항</button></li>
+        <li><button type="button">Q&A</button></li>
+        <li><button type="button">자유게시판</button></li>
+      </ol>
+      <section>
+        <h3>최근 게시물</h3>
+        <ol reversed start="10">
+          <!-- 클릭 시 링크로 연결되어야 함. a 까먹지 말자. -->
+          <li>
+            <a href="">
+              <span>10</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>9</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>8</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>7</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>6</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>5</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>4</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>3</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>2</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>1</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>최근 게시물</h3>
+        <ol reversed start="10">
+          <!-- 클릭 시 링크로 연결되어야 함. a 까먹지 말자. -->
+          <li>
+            <a href="">
+              <span>10</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>9</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>8</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>7</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>6</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>5</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>4</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>3</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>2</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>1</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <section>
+        <h3>최근 게시물</h3>
+        <ol reversed start="10">
+          <!-- 클릭 시 링크로 연결되어야 함. a 까먹지 말자. -->
+          <li>
+            <a href="">
+              <span>10</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>9</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>8</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>7</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>6</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>5</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>4</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>3</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>2</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <span>1</span>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, a.</p>
+              <time datetime="2022-01-01">2022.01.01</time>
+            </a>
+          </li>
+        </ol>
+      </section>
+      <a href="">more +</a>
+    </section>
+    
+    <section>
+      <h2>Instagram</h2>
+      <!-- section 대신 article을 사용하심. -->
+      <article>
+        <h3>최근 인스타그램 피드</h3>
+        <ol>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ol>    
+      </article>
+      <article>
+        <h3>최근 인스타그램 피드</h3>
+        <ol>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ol>    
+      </article>
+      <article>
+        <h3>최근 인스타그램 피드</h3>
+        <ol>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <figure>
+                <img src="" alt="">
+                <figcaption>
+                  <!-- p 대신 em 강조! -->
+                  <em>Lorem, ipsum dolor.</em>
+                  <p>Lorem ipsum dolor sit amet.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+        </ol>    
+      </article>
+      <button type="button"><img src="" alt=""></button>
+      <button type="button"><img src="" alt=""></button>
+      <!-- indicator 모르겠음 -->
+      <ol>
+        <li>
+          <button type="button">1~3번째 피드</button>
+        </li>
+        <li>
+          <button type="button">4~6번째 피드</button>
+        </li>
+        <li>
+          <button type="button">7~9번째 피드</button>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>모두의 HTML/CSS</p>
+    <address>
+      <dl>
+        <dt>주소</dt>
+        <dd>서울특별시 사랑시 고백구 행복동 123-45 1층</dd>
+      </dl>
+      <dl>
+        <dt>전화번호</dt>
+        <dd>02-987-6543</dd>
+      </dl>
+      <dl>
+        <dt>이메일</dt>
+        <dd>abc@gmail.com</dd>
+      </dl>
+    </address>
+    <small>©Weniv all rights reserved</small>
+  </footer>
+</body>
+</html>

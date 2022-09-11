@@ -1,0 +1,124 @@
+body {
+  margin: initial;
+  background-image: url(images/background4.png);
+  background-size: cover;
+}
+
+h1, h2, p {
+  margin: initial;
+  font-size: initial;
+  font-weight: initial;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+ul {
+  list-style-type: none;
+  margin: initial;
+  padding: initial;
+}
+
+.container {
+  margin: 30px auto;
+  width: 800px;
+  border-radius: 4px; /*왜 안될까 -> overflow: hidden이 필요*/
+  overflow: hidden;
+}
+
+.header {
+  width: auto;
+  height: 360px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: url(images/cover06.png);
+  background-size: cover;
+  padding: 50px 0;
+}
+
+.header__img_profile {
+  width: 150px;
+  height: 150px;
+  border-radius: 50px;
+  border: 6px solid white;
+  margin: 50px 0 10px;
+}
+
+.header__text_name {
+  font-size: 80px;
+  font-weight: bold;
+  color: aliceblue;
+}
+
+.header__text_job {
+  font-size: 16px;
+  font-weight: bold;
+  color: aliceblue;
+  border-top: 4px solid aliceblue;
+  width: fit-content; /*왜 이걸하면 왼쪽으로 가지? -> text align의 상속임. 따라서 p요소의 width: auto 안에서 텍스트가 가운데 정렬된 것이므로 가운데 정렬처럼 '보였던' 것.*/
+  margin: 0 auto;
+  padding: 8px;
+}
+
+.contents {
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.contents__block {
+  background-color: white;
+  border: 1px solid aliceblue;
+  padding: 10px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border-radius: 10px;
+}
+
+.info {
+  background-image: url(images/icon-information.png);
+  margin-bottom: 15px;
+}
+
+.skills {
+  background-image: url(images/icon-skills.png);
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: violet;
+}
+
+.contents__li {
+  margin-left: 20px;
+  border-left: 6px solid aliceblue;
+  padding: 3px 10px;
+}
+
+.footer {
+  background-color: honeydew;
+  text-align: center;
+  padding: 26px 0;
+}
+
+/*
+.footer__ul {
+  background-color: orange;
+  width: fit-content;
+  margin: 0 auto; -> 길이가 길어졌을 때  text-align과 차이를 보라!
+}
+*/
+
+.footer__li {
+  display: inline;
+  border: 1px solid green;
+  border-radius: 20px;
+  padding: 6px 10px;
+}
+
+a {
+  color: green;
+}
+

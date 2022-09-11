@@ -1,0 +1,40 @@
+/* reset */
+h1, p {
+  margin: 0;
+}
+
+/* Layout */
+.container {
+  background-color: antiquewhite;
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* Components */
+body {
+  background-image: url(images/bg.png);
+}
+
+.animal-cover {
+  display: block;
+  margin: 0 auto;
+}
+
+.animal-ground {
+  background-image: url(images/green.png);
+  background-repeat: repeat-x;
+  background-color: #9c6133;
+  color: #d2bdad;
+  padding: 80px 30px 30px 30px;
+  border-radius: 0 0 26px 26px;
+  border-bottom: 10px solid #4a260b
+}
+
+.animal-ground h1 {
+  color: white;
+  margin-bottom: 14px;
+}
+
+.animal-ground p {
+  margin-top: 1em;
+}
