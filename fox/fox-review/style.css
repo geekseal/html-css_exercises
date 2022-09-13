@@ -1,0 +1,52 @@
+body, h2, p {
+  margin: initial;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+body {
+  background-image: url(images/bg.png);
+  background-attachment: fixed;
+  /* NOTE: 백그라운드 이미지가 더 이상 바디 기준이 아닌  뷰포트 기준으로 설정된다. (body의 display는 block이어서 height:auto임을 참고) */
+  background-position: center;
+  background-size: cover;
+}
+
+.animal-wrapper {
+  width: min-content;
+  /* QUESTION: min-content는 이미지 픽셀이 300x300이라는 가정 하에 특별히 다른 요소에 의해 생길 문제는 없는가?? */
+  height: auto;
+  /* NOTE: height auto가 컨텐츠 길이에 관계없이 대응할 수 있는 무난한 방법인듯. first 시도 때는 overflow: scroll로 처리했음.*/
+  margin: 100px auto;
+}
+
+.animal-img-char {
+  vertical-align: top;
+  /* QUESTION: 이 경우 bottom도 같은 결과임. top을 쓰신 이유는 가장 안정적인 방식이기 때문에??? */
+}
+
+.animal-contents {
+  background-image: url(images/green.png);
+  background-repeat: repeat-x;
+  /* NOTE: no-repeat보다 repeat-x일 때 유연함. 부모 컨테이너의 너비가 400px일 때도 대응 가능. */
+  /* QUESTION: 윗 패딩을 많이 주어서 힘들게 맞추는 느낌이 든다. img요소가 낫지는 않을까? */
+  background-color: #93572e;
+  padding: 70px 20px 30px;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+  box-shadow: 0 10px 0px 0px rgba(74,38,11,255);
+  /* NOTE: 보더로 처리도 가능.
+  border-bottom: 10px solid #4a260b; */
+  color: white;
+}
+
+.animal-contents-title {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.animal-contents-desc {
+  font-size: 1rem;
+  color: rgb(206, 192, 183);
+}

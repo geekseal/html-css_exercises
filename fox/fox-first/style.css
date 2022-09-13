@@ -14,7 +14,7 @@ h1, p {
 
 .container {
   width: 300px; /* 캐릭터 이미지 크기에 관계없이 일정한 크기를 유지하기 위해 width 고정 */
-  height: fit-content; /* 캐릭터 설명이 짧을 때를 대비 */
+  height: fit-content; /* 캐릭터 설명이 짧을 때를 대비 -> 굳이 필요없네, height: auto도 충분하기 때문인듯. */ 
   margin: 100px auto 0;
 }
 
