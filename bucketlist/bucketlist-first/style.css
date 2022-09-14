@@ -20,13 +20,15 @@ body {
   margin: 100px auto;
   border-radius: 40px;
   box-shadow: 0 0 3px 3px rgb(192, 192, 192);
+  overflow: hidden;
+  /* NOTE: 안쪽도 다시 깎을 필요가 없게 overflow hidden 처리 */
 }
 
 .bucket-header {
   background-color: white;
   padding: 3em 0;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
+  /* border-top-left-radius: 40px;
+  border-top-right-radius: 40px; */
 }
 
 .bucket-title {
@@ -40,8 +42,8 @@ body {
   background-color: rgb(236, 236, 236);
   box-sizing: border-box;
   border-top: 5px solid rgb(216, 216, 216);
-  border-bottom-left-radius: 40px;
-  border-bottom-right-radius: 40px;
+  /* border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px; */
   padding: 1.5rem;
 }
 

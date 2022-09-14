@@ -45,6 +45,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   line-height: 265px;
+  /* font-size: 265px; 보다 line-height가 정확한듯.*/
 }
 
 .header-logo {
