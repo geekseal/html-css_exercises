@@ -1,0 +1,223 @@
+body, h1, h2, h3, p {
+  margin: initial;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  border: initial;
+  border-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'OTEnjoystoriesBA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansBold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GmarketSansMedium';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff2") format('woff2'),
+  url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.woff") format('woff'),
+  url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
+}
+
+.hidden {
+  display: none;
+}
+
+.rule-section {
+  background-color: #5B2386;
+  color: white;
+  font-family: 'GmarketSansMedium';
+  padding-top: 60px;
+}
+
+.rule-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rule-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  /* 이게 왜 되는거지... */
+}
+
+.rule-header-clock {
+  width: 221.6px;
+  height: 225px;
+}
+
+.rule-header-logo {
+  width: 564px;
+  height: 112px;
+  position: absolute;
+  /* position: absolute; */
+  /* absolute를 한 뒤에는 더 이상 rule-header의 공간을 차지하지 않는다. */
+  /* justify-content: center; + position: absolute; */
+}
+
+.rule-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.rule-intro-better-you {
+  font-family: 'OTEnjoystoriesBA';
+  font-size: 2.5em;
+  color: #F5DF4D;
+  margin-bottom: 40px;
+}
+
+.rule-intro-def-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rule-intro-def {
+  text-align: center;
+  font-size: 18px;
+}
+
+.rule-intro-def strong {
+  font-family: 'GmarketSansBold';
+  font-size: 1.15em;
+}
+
+.rule-intro-quote {
+  position: absolute;
+}
+
+.input-result-rep {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom:100px;
+}
+
+.input-result-rep p {
+  margin-bottom: 20px;
+}
+
+.input-result-rep p+p {
+  margin-bottom: 60px;
+}
+
+.rule-input input {
+  font-family: "GmarketSansMedium";
+  font-size: 20px;
+  padding: 10px 0 10px 20px;
+  border-radius: 6px;
+  margin: 0 8px;
+  width: 10em;
+}
+
+.btn {
+  font-family: "GmarketSansBold";
+  color: #5B2386;
+  font-size: 20px;
+  background-color: #F5DF4D;
+  padding: 10px 40px;
+  border-radius: 40px;
+}
+
+.rule-input-click {
+  position: absolute;
+}
+
+.rule-result span {
+  font-family: "GmarketSansBold";
+  font-size: 2.5em;
+  margin: 0 14px;
+  vertical-align: middle;
+}
+
+.rule-result-btn-share {
+  margin-left: 20px;
+  background-color: white;
+}
+
+.rule-footer {
+  background-color: #5B2386;
+  text-align: center;
+  padding-bottom: 60px;
+  color: white;
+  font-family: "GmarketSansMedium";
+  font-size: 12px;
+}
+
+.rule-footer-logo-weniv {
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.modal-start {
+  background-color: beige;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-wrapper {
+  background-color: white;
+  width: 600px;
+  height: 600px;
+  box-sizing: border-box;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-start-cheer p {
+  font-family: 'OTEnjoystoriesBA';
+  color:#5B2386;
+  text-align: center;
+}
+
+.fighting {
+  font-size: 60px;
+  /* font-weight: 900; 안 되는 이유?? */
+}
+
+.dream {
+ font-size: 30px;
+}
+
+.modal-start-licat {
+  margin-bottom: 20px;
+}
+
+.modal-start-btn {
+  display: inline-block;
+  /* a 요소는 inline이기 때문에 padding(from .btn)이 공간을 차지하지 못한다. 그래서 위아래 정렬이 이상해보였다. */
+  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 15%), 0px 5px 16px 0px rgb(0 0 0 / 15%);
+}
