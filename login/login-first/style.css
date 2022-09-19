@@ -20,35 +20,49 @@ a {
   border: 1px solid #DBDBDB;
   border-radius: 5px;
   padding: 19px 16px 18px;
+  font-size: 12px;
 }
 
-.link-login {
+.welcome {
+  font-weight: 400;
+}
+
+.login-link {
   background-color: #711BFF;
-  display: block;
-  width: 318px;
-  /* padding: 20px; 더 간결한 방법? */
-  height: 40px;
-  margin: 16px auto;
-  border-radius: 5px;
   color: white;
+  display: block;
+  /* width: 318px -> width를 지정하기보다 auto가 나은 방법일듯. login area 자체가 커질 수 있으니 */
+  height: 40px;
+  margin: 16px auto 17px;
+  border-radius: 5px;
   font-weight: 500;
   text-align: center;
   box-sizing: border-box;
+  /* padding: 20px; 더 간결한 방법? */
 }
 
-.img-weniv, .txt-login {
+.img-weniv {
+  vertical-align: top;
+  margin-top: 9px;
+}
+
+.txt-login {
   /* txt-login margin 적용하기 위해서 */
   display: inline-block;
   vertical-align: top;
-  margin-top: 11px;
+  margin-top: 13px;
   /* QUESTION: img의 경우 Inline일텐데 마진이 적용되는 이유? a 요소 내부에 있어서 그런가? */
   /* ANSWER: img는 inline 요소지만 실제로는 inline-block에 가까운 기능을 가지고 있다. margin이 적용된다. */
 }
 
 .help {
+  /* overflow를 이용해 bfc를 새로 생성하여 찾기/회원가입 div들을 새로운 flow로 유입시키고, 높이를 인식하게 한다. */
+  /* flow out된 이유는 float 때문 */
   overflow: hidden;
-  /* background-color: red; */
-  /* color:#767676; NOTE: 이게 안 되는 이유는 a 태그에서 리셋이 걸리기 때문인듯.*/
+  /* background-color: beige; */
+
+  /* color:#767676; */
+  /* NOTE: 부모요소의 color로 a태그 안 컨텐츠 컬러가 바뀌지 않는 이유는 상속하는 과정에서 a 요소의 리셋, 혹은 초깃값으로 리셋이 걸리기 때문인듯. */
 }
 
 .forgot {
@@ -59,18 +73,19 @@ a {
   float: right;
 }
 
-.forgot-id {
-  border-right: 2px solid #767676;
-  /* background-color: dodgerblue; */
-  padding-right: 5px;
+/* 보더를 주는 것보다 가상 요소를 활용하는 게 나은듯. */
+.forgot-id::after {
+  content: "|";
+  padding-left: 4px;
 }
 
 .help-link {
+  padding-left: 4px;
   color: #767676;
 }
 
 .help-img {
-  vertical-align: top;
-  /* 이미지 밑 빈 공간 제거 -> 세로 축 가운데 정렬로 보이는 효과 */
-  /* background-color: yellow; */
+  vertical-align: bottom;
+  /* background-color: red; */
+  /* 이미지 밑 빈 공간 제거 */
 }
