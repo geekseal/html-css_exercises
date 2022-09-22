@@ -53,11 +53,12 @@ main {
 	color: white;
 	width: 26%;
 	font-size: 40px;
+	/* line height 초기화 조심. */
 }
 
 .highlight {
 	display: inline-block;
-	/* inline일 때는 왜 안될까.. */
+	/* QUESTION: inline일 때는 왜 안될까.. */
 	position: relative;
 	z-index: 1;
 }
@@ -133,6 +134,7 @@ main {
 	color: white;
 	font-size: 30px;
 	z-index: 1;
+	/* 원래 z-index는 position이 static이 아닌 경우에 작동하지만 이 경우는 flex라서 예외. */
 }
 
 .figure > figcaption {

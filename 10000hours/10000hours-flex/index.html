@@ -8,70 +8,76 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class="rule-section">
-      <h2 class="hidden">1만 시간의 법칙</h2>
-      <div class="rule-wrapper">
-        <header class="rule-header">
-          <h3 class="hidden">1만 시간의 법칙 로고</h3>
-          <img class="rule-header-clock" src="images/clock.png" alt="배경사진">
-          <!-- NOTE: 높이가 더 큰 시계 이미지를 큰 박스로 두고 그 가운데에 로고를 정렬하는 것이 좋은 방법일듯. 그러나 순서가 바뀌어도 정렬은 같은 형태로 되긴 함. -->
-          <img class="rule-header-logo" src="images/title.png" alt="1만 시간의 법칙 로고">
-        </header>
-        <section class="rule-intro">
-          <h3 class="hidden">1만 시간의 법칙 소개</h3>
-          <p class="rule-intro-better-you">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</p>
-          <div class="rule-intro-def-wrapper">
-            <p class="rule-intro-def">
-              <strong>1만 시간의 법칙</strong>은
-              <br>
-              어떤 분야의 전문가가 되기 위해서는
-              <br>
-              최소한 1만 시간의 훈련이 필요하다는 법칙이다.
-            </p>
-            <img class="rule-intro-quote" src="images/quotes.png" alt="배경사진">
-          </div>
-        </section>
-        <section class="rule-input input-result-rep">
-          <h3 class="hidden">희망 분야와 하루 투자 시간 조사</h3>
-          <form class="rule-input-form" action="index.html" method="get">
-            <p class="rule-input-field">나는<input id="field-value" type="text" placeholder="예) 프로그래밍">전문가가 될 것이다.</p>
-            <p class="rule-input-time">그래서 앞으로 매일 하루에<input id="hour-value" type="number" placeholder="예) 5">시간씩 훈련할 것이다.</p>
-            <button class="rule-input-bt-how-much btn">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
-            <img class="rule-input-click" src="images/click.png" alt="">
-          </form>
-        </section>
-        <section class="rule-result input-result-rep">
-          <h3 class="hidden">희망 분야 전문가가 되기까지 남은 시간</h3>
-          <p class="rule-result-field">당신은<span>프로그래밍</span>전문가가 되기 위해서</p>
-          <p class="rule-result-time">대략<span>5110</span>일 이상 훈련하셔야 합니다!:)</p>
-          <button class="rule-result-btn-start btn">훈련하러 가기 GO!GO!</button>
-          <button class="rule-result-btn-share btn">공유하기</button>
-        </section>
-      </div>
-    </section>
-    <footer class="rule-footer">
-      <img class="rule-footer-logo-weniv" src="images/logo.png" alt="주식회사 위니브">
-      <small class="rule-footer-copyright">
-        ※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.
-        <br>
-        수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
-      </small>
-    </footer>
+  <section class="rule-section">
+    <h2 class="screen_out">1만 시간의 법칙 페이지</h2>
+    
+    <header class="rule-header">
+      <img class="img-logo" src="images/title.png" alt="1만 시간의 법칙 로고">
+      <img class="img-clock" src="images/clock.png" alt="">
+    </header>
 
-    <section class="modal-start">
-      <h2 class="hidden">훈련 시작 모달창</h2>
-      <div class="modal-wrapper">
-        <div class="modal-start-cheer">
-          <p class="fighting">화이팅!!♥♥♥</p>
-          <p class="dream">당신의 꿈을 응원합니다!</p>
-        </div>
-        <div class="modal-start-licat">
-          <img src="images/licat.png" alt="라이캣">
-        </div>
-        <div class="modal-start-link">
-          <a class="modal-start-btn btn" href="">종료하고 진짜 훈련하러 가기 GO!GO!</a>
-        </div>
-      </div>
+    <section class="rule-intro">
+      <h3 class="screen_out">1만 시간의 법칙 소개</h3>
+      <p class="txt-better">"연습은 어제의 당신보다 당신을 더 낫게 만든다."</p>
+      <p class="txt-definition">
+        <strong>1만 시간의 법칙</strong>은
+        <br>
+        어떤 분야의 전문가가 되기 위해서는
+        <br>
+        최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+      </p>
     </section>
+
+    <section class="rule-input input-result-rep">
+      <h3 class="screen_out">희망 분야와 하루 투자 시간 조사</h3>
+      <form class="input-form" action="index.html" method="get">
+        <p class="txt-field">
+          나는
+          <input id="field-value" type="text" placeholder="예) 프로그래밍">
+          전문가가 될 것이다.
+        </p>
+        <p class="txt-time">
+          그래서 앞으로 매일 하루에
+          <input id="hour-value" type="number" placeholder="예) 5">
+          시간씩 훈련할 것이다.
+        </p>
+        <button class="btn-submit btn">나는 며칠 동안 훈련을 해야 1만 시간이 될까?</button>
+      </form>
+    </section>
+
+    <section class="rule-result input-result-rep">
+      <h3 class="screen_out">희망 분야 전문가가 되기까지 남은 시간</h3>
+      <p class="txt-field">
+        당신은<span>프로그래밍</span>전문가가 되기 위해서
+      </p>
+      <p class="txt-time">
+        대략<span>5110</span>일 이상 훈련하셔야 합니다!:)
+      </p>
+      <button class="btn-go btn">훈련하러 가기 GO!GO!</button>
+      <button class="btn-share btn">공유하기</button>
+    </section>
+  </section>
+
+  <footer class="rule-footer">
+    <img class="img-weniv" src="images/logo.png" alt="주식회사 위니브">
+    <small class="txt-copyright">
+      ※ 본 서비스 내 이미지 및 콘텐츠의 저작권은 주식회사 WeNiv에 있습니다.
+      <br>
+      수정 및 재배포, 무단 도용 시 법적인 문제가 발생할 수 있습니다.
+    </small>
+  </footer>
+
+  <section class="modal-go-section">
+    <h2 class="screen_out">훈련 시작 모달 섹션</h2>
+    <article class="modal-go">
+      <h3 class="screen_out">훈련 시작 모달 창</h3>
+      <div class="wrapper-cheer">
+        <p class="txt-fighting">화이팅!!♥♥♥</p>
+        <p class="txt-dream">당신의 꿈을 응원합니다!</p>
+      </div>
+      <img class="img-licat" src="images/licat.png" alt="라이캣">
+      <a class="modal-start-btn btn" href="">종료하고 진짜 훈련하러 가기 GO!GO!</a>
+    </article>
+  </section>
 </body>
 </html>

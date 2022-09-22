@@ -1,3 +1,4 @@
+/* reset */
 body, h1, h2, h3, p {
   margin: initial;
   font-size: inherit;
@@ -7,12 +8,30 @@ body, h1, h2, h3, p {
 button {
   border: initial;
   border-style: none;
+  padding: initial;
+  margin: initial;
 }
 
 a {
   text-decoration: none;
 }
 
+input {
+  padding: initial;
+  margin: initial;
+  border: none;
+}
+
+.screen_out {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+/* typo */
 @font-face {
   font-family: 'OTEnjoystoriesBA';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/OTEnjoystoriesBA.woff') format('woff');
@@ -43,37 +62,29 @@ a {
   url("https://fonts.gstatic.com/ea/notosanskr/v2/NotoSansKR-Regular.otf") format('opentype');
 }
 
-.hidden {
-  display: none;
+.rule-section {
+  font-family: 'GmarketSansMedium';
+  color: white;
 }
 
+/* layout */
 .rule-section {
   background-color: #5B2386;
-  color: white;
-  font-family: 'GmarketSansMedium';
   padding-top: 60px;
-}
-
-.rule-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+/* header */
 .rule-header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
-  /* 이게 왜 되는거지... */
+  margin-bottom: 66px;
 }
 
-.rule-header-clock {
-  width: 221.6px;
-  height: 225px;
-}
-
-.rule-header-logo {
+.rule-header .img-logo {
   width: 564px;
   height: 112px;
   position: absolute;
@@ -82,6 +93,12 @@ a {
   /* justify-content: center; + position: absolute; */
 }
 
+.rule-header .img-clock {
+  width: 221.6px;
+  height: 225px;
+}
+
+/* intro */
 .rule-intro {
   display: flex;
   flex-direction: column;
@@ -89,135 +106,147 @@ a {
   margin-bottom: 100px;
 }
 
-.rule-intro-better-you {
+.rule-intro .txt-better {
   font-family: 'OTEnjoystoriesBA';
-  font-size: 2.5em;
+  font-size: 36px;
+  line-height: 40px;
   color: #F5DF4D;
-  margin-bottom: 40px;
+  margin-bottom: 78px;
 }
 
-.rule-intro-def-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rule-intro-def {
+.rule-intro .txt-definition {
+  background-image: url(images/quotes.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 25%;
+  width: 100%;
   text-align: center;
   font-size: 18px;
+  line-height: 30px;
 }
 
-.rule-intro-def strong {
+.rule-intro .txt-definition strong {
   font-family: 'GmarketSansBold';
-  font-size: 1.15em;
+  font-size: 24px;
 }
 
-.rule-intro-quote {
-  position: absolute;
-}
-
+/* input & result repeated */
 .input-result-rep {
   text-align: center;
-  font-size: 20px;
-  margin-bottom:100px;
+  margin-bottom: 136px;
 }
 
 .input-result-rep p {
+  font-size: 24px;
   margin-bottom: 20px;
 }
 
 .input-result-rep p+p {
-  margin-bottom: 60px;
+  margin-bottom: 65px;
 }
 
-.rule-input input {
+/* input */
+.rule-input .input-form input {
+  width: 228px;
+  box-sizing: border-box;
+  padding: 16px 10px;
+  border-radius: 7px;
+  margin: 0 17px;
   font-family: "GmarketSansMedium";
-  font-size: 20px;
-  padding: 10px 0 10px 20px;
-  border-radius: 6px;
-  margin: 0 8px;
-  width: 10em;
+  font-size: 24px;
+  text-align: center;
 }
 
 .btn {
   font-family: "GmarketSansBold";
   color: #5B2386;
-  font-size: 20px;
+  font-size: 24px;
   background-color: #F5DF4D;
-  padding: 10px 40px;
-  border-radius: 40px;
+  padding: 21px 49px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 56px;
+  cursor: pointer;
 }
 
-.rule-input-click {
+.rule-input .btn-submit {
+  position: relative;
+}
+
+.rule-input .btn-submit::after {
+  content: '';
   position: absolute;
+  display: inline-block;
+  width: 64px;
+  height: 72px;
+  background-image: url(images/click.png);
+  margin-left: 50px;
 }
 
+/* result */
 .rule-result span {
   font-family: "GmarketSansBold";
-  font-size: 2.5em;
-  margin: 0 14px;
+  font-size: 72px;
+  line-height: 72px;
+  margin: 0 12px;
   vertical-align: middle;
 }
 
-.rule-result-btn-share {
-  margin-left: 20px;
+.rule-result .btn-share {
+  margin-left: 18px;
   background-color: white;
 }
 
+/* footer */
 .rule-footer {
   background-color: #5B2386;
+  color: white;
   text-align: center;
   padding-bottom: 60px;
-  color: white;
-  font-family: "GmarketSansMedium";
-  font-size: 12px;
 }
 
-.rule-footer-logo-weniv {
+.rule-footer .img-weniv {
   display: block;
   margin: 0 auto 20px;
 }
 
-.modal-start {
-  background-color: beige;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.rule-footer .txt-copyright {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-size: 12px;
+  line-height: 17px;
 }
 
-.modal-wrapper {
+/* modal-go */
+.modal-go-section {
+  background-color: beige;
+}
+
+.modal-go {
   background-color: white;
-  width: 600px;
-  height: 600px;
+  margin: 0 auto;
+  width: 800px;
+  height: 800px;
   box-sizing: border-box;
   border-radius: 30px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  padding: 68px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.modal-start-cheer p {
+.modal-go .wrapper-cheer {
   font-family: 'OTEnjoystoriesBA';
   color:#5B2386;
   text-align: center;
 }
 
-.fighting {
-  font-size: 60px;
-  /* font-weight: 900; 안 되는 이유?? */
+.wrapper-cheer .txt-fighting {
+  font-size: 96px;
+  margin-bottom: 4px;
 }
 
-.dream {
- font-size: 30px;
-}
-
-.modal-start-licat {
-  margin-bottom: 20px;
-}
-
-.modal-start-btn {
-  display: inline-block;
-  /* a 요소는 inline이기 때문에 padding(from .btn)이 공간을 차지하지 못한다. 그래서 위아래 정렬이 이상해보였다. */
-  box-shadow: 0px 6px 16px 0px rgb(0 0 0 / 15%), 0px 5px 16px 0px rgb(0 0 0 / 15%);
+.wrapper-cheer .txt-dream {
+ font-size: 36px;
 }
