@@ -4,10 +4,16 @@ body {
 
 :root {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
   /*
 	font-weight: 500;
 	font-weight: 700;
 	*/
+}
+
+button, input {
+  border-style: none;
+  padding: initial;
 }
 
 /* header */
@@ -28,6 +34,7 @@ body {
 }
 
 /* app */
+/* grid의 영역으로 컴포넌트들의 높이와 너비를 정해주는 게 좋을까? 각 컴포넌트마다 높이와 너비를 정해주는 게 좋을까? */
 .kiosk {
   background-color: tomato;
   display: grid;
@@ -38,7 +45,8 @@ body {
   grid-template-areas:
     'vending_machine wallet'
     'vending_machine purchased';
-  gap: 20px;
+  gap: 20px 28px;
+  /* row column */
 }
 
 /* vending machine */
@@ -55,22 +63,45 @@ body {
 
 .vending_machine .section-drink_items {
   background-color: brown;
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .vending_machine .section-drink_items .drink_items {
   width: 94px;
   height: 130px;
-  box-sizing: border-box;
   background-color: aquamarine;
+  box-sizing: border-box;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-  border-radius: 10px;
+  /* border-radius: 10px; */
+  /* overflow: hidden; */
+}
+
+.section-drink_items .drink_items .btn-drink_items {
+  background-color: dodgerblue;
+  height: 100%;
+  width: 100%;
   padding: 9px 11px;
+  border-radius: 10px;
+  /* QUESTION: 왜 width 100%를 줘야하지? */
+}
+
+/* 버튼을 쓰지 않고 li 요소를 클릭했을 때는 클릭이 때지는 순간 작동하지 않는다.
+수정: 버튼도 똑같이 그렇다. */
+/* QUESTION: 어떻게 해야될까? */
+.vending_machine .section-drink_items .btn-drink_items:active,
+.vending_machine .section-drink_items .btn-drink_items:hover {
+  outline: 3px solid #6327FE;
 }
 
 .section-drink_items .drink_items figure {
-  background-color: burlywood;
+  /* background-color: burlywood; */
   height: 100%;
   text-align: center;
   display: flex;
@@ -84,11 +115,9 @@ body {
   height: 65px;
 }
 
-.drink_items .txt-item_name {
+.txt-item_name {
   font-size: 9px;
   line-height: 13px;
-  margin-bottom: 7px;
-  font-weight: 500;
 }
 
 .drink_items .txt-item_price {
@@ -98,6 +127,7 @@ body {
   background: #6327FE;
   border-radius: 50px;
   padding: 5px 16px;
+  margin-top: 7px;
 }
 
 .vending_machine .section-purchase {
@@ -112,13 +142,52 @@ body {
   gap: 12px;
 }
 
+/* design */
+.balance,
+.btn,
+.input-pay,
+.my_cart,
+.items-my_cart,
+.wallet .money,
+.purchased .section-purchased_items .purchased_items,
+.purchased .section-purchased_items {
+  border-radius: 5px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.btn-change, .btn-pay {
+  background-color: white;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  font-size: 13 px;
+  line-height: 19px;
+}
+
+.btn-purchase {
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  background-color: #6327FE;
+  color: white;
+}
+
+.input-pay {
+  padding: 6px;
+  font-size: 13px;
+  line-height: 19px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+}
+/* design */
+
 .vending_machine .section-purchase .balance {
   background-color: #EAE8FE;
   padding: 6px 10px;
   display: flex;
   justify-content: space-between;
   /* align-items: center; */
-
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .vending_machine .section-purchase .form-pay {
@@ -128,7 +197,11 @@ body {
   gap: 12px;
 }
 
+/* 아이템 이름이 길어질 경우 어떻게 대처할 건지? */
 .vending_machine .section-purchase .my_cart {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   background-color: #EAE8FE;
   border: 1px solid #BDBDBD;
   border-radius: 5px;
@@ -139,7 +212,23 @@ body {
 .vending_machine .section-purchase .my_cart .items-my_cart {
   background-color: white;
   display: flex;
+  align-items: center;
+  gap: 10px;
   padding: 8px;
+}
+
+.section-purchase .my_cart .items-my_cart .inp-item_quantity {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  /* flex-shrink: 0; */
+  /* justify-self: flex-end; flexbox에 justify-self는 없다. 대신 margin으로 조절이 가능하다. */
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* wallet */
@@ -156,21 +245,27 @@ body {
   align-items: stretch;
 }
 
-
 .kiosk .wallet .money {
   background-color: #EAE8FE;
   padding: 6px 10px;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
+  line-height: 20px;
 }
 
+.wallet .money .txt-right {
+  font-weight: 700;
+}
 
+/* purchased section */
 .kiosk .purchased {
   background-color: yellowgreen;
   grid-area: purchased;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 360px;
   height: 474px;
   box-sizing: border-box;
@@ -179,27 +274,48 @@ body {
 
 .purchased .txt-purchased_items {
   align-self: center;
-  margin-bottom: 13px;
-}
-
-.purchased .txt-spent_money {
-  align-self: flex-end;
-  margin-top: 6px;
+  font-size: 14px;
+  line-height: 20px;
 }
 
 .purchased .section-purchased_items {
   background-color: #EAE8FE;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 12px 18px;
-  overflow: hidden;
   height: 364px;
+  box-sizing: border-box;
+  padding: 12px 18px;
+  overflow: scroll;
+  border: 1px solid #BDBDBD;
 }
 
 .purchased .section-purchased_items .purchased_items {
   background-color: white;
   display: flex;
+  align-items: center;
+  gap: 18px;
   padding: 6px 8px 7px 10px;
 }
 
+.section-purchased_items .purchased_items .txt-item_quantity {
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  text-align: center;
+  /* flex-shrink: 0; */
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  padding: 3px 10px 5px;
+}
+
+.purchased .txt-spent_money {
+  align-self: flex-end;
+  font-size: 12px;
+  line-height: 17px;
+}
