@@ -36,18 +36,16 @@ strong {
   font-style: normal;
 }
 
-/* layout */
 .sec-recruit_contents {
-  background-color: beige;
   display: flex;
   flex-direction: column;
   margin: 100px auto;
   box-sizing: border-box;
-  padding-left: 16px;
+  width: max-content;
+  padding: 16px;
 }
 
 .sec-recruit_contents .txt-recruit {
-  /* background-color: tomato; */
   width: 315px;
   font-size: 36px;
   line-height: 45px;
@@ -74,35 +72,40 @@ strong {
 .cont-contents_category {
   display: flex;
   flex-direction: column;
+  gap: 14px;
+}
+
+.contents_category {
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  background-color: brown;
   width: 356px;
   height: 205px;
   border-radius: 20px;
-  margin-bottom: 14px;
   color: white;
   box-sizing: border-box;
   padding: 20px;
 }
 
-.cont-contents_category .txt-category {
+.contents_category .txt-category {
   font-weight: 700;
   font-size: 24px;
   line-height: 30px;
+  margin: 10px;
 }
 
-.cont-contents_category .btn {
+.contents_category .btn {
   font-size: 16px;
   line-height: 20px;
   margin-left: auto;
 }
 
-.cont-contents_category.first {
+.contents_category.first {
   background-image: url(images/Rectangle2.png);
   background-size: contain;
 }
 
-.cont-contents_category.second {
+.contents_category.second {
   background-image: url(images/Rectangle3.png);
   background-size: contain;
 }
@@ -117,4 +120,70 @@ strong {
   background-position: center;
   margin-left: 2px;
   vertical-align: top;
+}
+
+/* media query */
+@media screen and (min-width:768px) {
+  .sec-recruit_contents .txt-recruit {
+    width: 612px;
+    font-size: 70px;
+    line-height: 88px;
+    margin-bottom: 20px;
+  }
+  
+  .txt-about_weniv {
+    width: 309px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 60px;
+  }
+  
+  .cont-contents_category {
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .contents_category {
+    width: 344px;
+    height: 198px;
+  }
+}
+
+@media screen and (min-width:1440px) {
+  .sec-recruit_contents {
+    margin-top: 240px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      'title category'
+      'about_weniv category';
+    column-gap: 100px;
+  }
+  
+  .sec-recruit_contents .txt-recruit {
+    width: 612px;
+    font-size: 70px;
+    line-height: 88px;
+    margin-bottom: 20px;
+    grid-area: title;
+  }
+  
+  .txt-about_weniv {
+    width: 309px;
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 60px;
+    grid-area: about_weniv;
+  }
+  
+  .cont-contents_category {
+    flex-direction: column;
+    gap: 20px;
+    grid-area: category;
+  }
+
+  .contents_category {
+    width: 344px;
+    height: 198px;
+  }
 }
