@@ -12,11 +12,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- CSS작업은 아직 완료되지 않아서, HTML 마크업만 봐주시면 됩니다! -->
+  <!-- 총 세 질문입니다! 이외에도 거슬리는 점이 있다면 편하게 남겨주시면 감사하겠습니다. -->
   <header class="header-cola">
     <h1 class="screen_out">cola store</h1>
     <img class="img-logo" src="images/logo_2x.png" alt="콜라콜라 로고">
   </header>    
   <main class="main-cola">
+    <!-- 음료 자판기부터 획득한 음료 섹션까지 전체를 하나의 위젯(?)으로 보고 article.kiosk로 묶고, grid로 각 영역을 배치하고자 했습니다. 적절한 판단인지 궁금합니다. -->
     <article class="kiosk">
       <h2 class="screen_out">음료 키오스크</h2>
       <section class="vending_machine">
@@ -24,6 +27,7 @@
         <ol class="section-drink_items">
           <li class="drink_items">
             <button class="btn-drink_items">
+              <!-- 콜라 사진, 콜라 이름, 콜라 가격을 figure와 figcap으로 표현했습니다. 그런데 디자인상으로나 마크업이 길어진다는 점에서 불편하여, 굳이 figure로 묶지 않아도 된다면 묶지 않고 싶습니다. 불편함을 감수하더라도 figure를 쓸만한지 궁금합니다. -->
               <figure>
                 <img class="img-item" src="images/original_cola_big.png" alt="">
                 <figcaption>
@@ -44,53 +48,8 @@
               </button>
             </figure>
           </li>
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-          
         </ol>
-        <!-- 아래를 섹션으로 묶음으로써 배치를 제한하게 되지는 않을까? 범위와 기능을 잘 고려해야할듯 -->
+        <!-- 아래 요소들이 비슷한 성격을 가지고 있다고 생각하여 section.section-purchase로 묶었는데, 적절한 판단인지 궁금합니다. -->
         <section class="section-purchase">
           <h4 class="screen_out">음료 구매 영역</h4>
           <div class="balance">
