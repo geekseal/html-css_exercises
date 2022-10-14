@@ -1,5 +1,5 @@
 /* reset */
-body, ul, li {
+body, ul, li, h2 {
   margin: initial;
   padding: initial;
 }
@@ -11,14 +11,13 @@ li {
 #app {
   background-color: aqua;
   height: 100vh;
-  perspective: 1600px;
 }
 
 .list_card {
   background-color: tomato;
   position: absolute;
-  width: 400px;
-  height: 500px;
+  width: 340px;
+  height: 400px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -35,4 +34,34 @@ li {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/* carousel */
+#app {
+  perspective: 1600px;
+}
+
+.list_card, .card {
+  transform-style: preserve-3d;
+}
+
+.list_card .card:nth-child(1) {
+  transform: rotateY(0) translateZ(calc(340px * 6 / 2 / 3.14));
+}
+
+.list_card .card:nth-child(2) {
+  transform: rotateY(calc(360deg/6 * 1)) translateZ(calc(340px * 6 / 2 / 3.14));
+  /* rotate, translate는 순서의 영향을 받는다.*/
+}
+.list_card .card:nth-child(3) {
+  transform: rotateY(calc(360deg/6 * 2)) translateZ(calc(340px * 6 / 2 / 3.14));
+}
+.list_card .card:nth-child(4) {
+  transform: rotateY(calc(360deg/6 * 3)) translateZ(calc(340px * 6 / 2 / 3.14));
+}
+.list_card .card:nth-child(5) {
+  transform: rotateY(calc(360deg/6 * 4)) translateZ(calc(340px * 6 / 2 / 3.14));
+}
+.list_card .card:nth-child(6) {
+  transform: rotateY(calc(360deg/6 * 5)) translateZ(calc(340px * 6 / 2 / 3.14));
 }

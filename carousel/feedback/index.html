@@ -31,14 +31,14 @@
         
         document.addEventListener('click', function(event) {
           // event.clientX 클릭이 x축으로부터 얼마나 떨어져있느냐 //
-          if (window.innerWidth / 2 < event.clientX) {
-          currAngle -= angle;
-        } else {
-          currAngle += angle;
-        }
+            if (window.innerWidth / 2 < event.clientX) {
+            currAngle -= angle;
+            } else {
+              currAngle += angle;
+            }
 
-        center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
-      })
+            center.style.transform = `translate(-50%, -50%) rotateY(${currAngle}deg)`;
+          })
     </script>
 </body>
 </html>
