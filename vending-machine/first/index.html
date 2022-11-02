@@ -1,116 +1,135 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>cola cola</title>
-  <link rel="stylesheet" href="reset.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <!-- CSS작업은 아직 완료되지 않아서, HTML 마크업만 봐주시면 됩니다! -->
-  <!-- 총 세 질문입니다! 이외에도 거슬리는 점이 있다면 편하게 남겨주시면 감사하겠습니다. -->
-  <header class="header-cola">
-    <h1 class="screen_out">cola store</h1>
-    <img class="img-logo" src="images/logo_2x.png" alt="콜라콜라 로고">
-  </header>    
-  <main class="main-cola">
-    <!-- 음료 자판기부터 획득한 음료 섹션까지 전체를 하나의 위젯(?)으로 보고 article.kiosk로 묶고, grid로 각 영역을 배치하고자 했습니다. 적절한 판단인지 궁금합니다. -->
-    <article class="kiosk">
-      <h2 class="screen_out">음료 키오스크</h2>
-      <section class="vending_machine">
-        <h3 class="screen_out">음료 자판기</h3>
-        <ol class="section-drink_items">
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <!-- 콜라 사진, 콜라 이름, 콜라 가격을 figure와 figcap으로 표현했습니다. 그런데 디자인상으로나 마크업이 길어진다는 점에서 불편하여, 굳이 figure로 묶지 않아도 된다면 묶지 않고 싶습니다. 불편함을 감수하더라도 figure를 쓸만한지 궁금합니다. -->
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-          <li class="drink_items">
-            <button class="btn-drink_items">
-              <figure>
-                <img class="img-item" src="images/original_cola_big.png" alt="">
-                <figcaption>
-                  <p class="txt-item_name">Original_Cola</p>
-                  <p class="txt-item_price" id="drinkPrice">1000원</p>
-                </figcaption>
-              </button>
-            </figure>
-          </li>
-        </ol>
-        <!-- 아래 요소들이 비슷한 성격을 가지고 있다고 생각하여 section.section-purchase로 묶었는데, 적절한 판단인지 궁금합니다. -->
-        <section class="section-purchase">
-          <h4 class="screen_out">음료 구매 영역</h4>
-          <div class="balance">
-            <span class="txt-left">잔액 :</span>
-            <span class="txt-right">1,000원</span>
-          </div>
-          <button class="btn-change btn">거스름돈 반환</button>
-          <form class="form-pay" action="" method="">
-            <input class="input-pay" type="number" placeholder="입금액 입력">
-            <button class="btn-pay btn" type="submit">입금</button>
-          </form>
-          <ol class="my_cart">
-            <li class="items-my_cart">
-              <img class="img-item" src="images/original_cola_small.png" alt="">
-              <p class="txt-item_name">Original_Cola</p>
-              <input id="itemQuantity" class="inp-item_quantity" type="text" value="1">
-              <label class="screen_out" for="itemQuantity">수량</label>
-            </li>
-            <li class="items-my_cart">
-              <img class="img-item" src="images/original_cola_small.png" alt="">
-              <p class="txt-item_name">Original_Cola</p>
-              <input id="itemQuantity" class="inp-item_quantity" type="text" value="1">
-              <label class="screen_out" for="itemQuantity">수량</label>
-            </li>
-          </ol>
-          <button class="btn-purchase btn">획득</button>
-        </section>
-      </section>
-      <section class="wallet">
-        <div class="money">
-          <span class="txt-left">소지금 :</span>
-          <span class="txt-right">25,000원</span>
-        </div>
-      </section>
-      <section class="purchased">
-        <h3 class="txt-purchased_items">획득한 음료</h3>
-        <ol class="section-purchased_items">
-          <li class="purchased_items">
-            <img class="img-item" src="images/original_cola_small.png" alt="">
-            <p class="txt-item_name">Original_Cola</p>
-            <span class="txt-item_quantity">1</span>
-          </li>
-          <li class="purchased_items">
-            <img class="img-item" src="images/original_cola_small.png" alt="">
-            <p class="txt-item_name">Original_Cola</p>
-            <span class="txt-item_quantity">1</span>
-          </li>
-          <li class="purchased_items">
-            <img class="img-item" src="images/original_cola_small.png" alt="">
-            <p class="txt-item_name">Original_Cola</p>
-            <span class="txt-item_quantity">1</span>
-          </li>
-          <li class="purchased_items">
-            <img class="img-item" src="images/original_cola_small.png" alt="">
-            <p class="txt-item_name">Original_Cola</p>
-            <span class="txt-item_quantity">1</span>
-          </li>
-        </ol>
-        <p class="txt-spent_money">총 금액 : 9,000원</p>
-      </section>
-    </article>
-  </main>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>cola cola</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header-cola">
+            <h1 class="screen_out">cola store</h1>
+            <img class="img-logo" src="images/logo_2x.png" alt="콜라콜라 로고입니다." />
+        </header>
+        <main class="main-cola">
+            <article class="kiosk">
+                <h2 class="screen_out">음료 키오스크</h2>
+                <section class="vending_machine">
+                    <h3 class="screen_out">음료 자판기</h3>
+                    <ul class="section-drink_items">
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                        <li class="drink_items">
+                            <button class="btn-drink_items">
+                                <img class="img-item" />
+                                <p class="txt-item_name"></p>
+                                <p class="txt-item_price"></p>
+                            </button>
+                        </li>
+                    </ul>
+                    <form class="section-purchase" action="index.html" method="">
+                        <fieldset class="wrap-balance_change">
+                            <legend class="screen_out">잔액과 잔돈 반환 영역</legend>
+                            <div class="balance">
+                                <span class="txt-left">잔액 :</span>
+                                <span class="txt-right">0 원</span>
+                            </div>
+                            <button class="btn-change btn">거스름돈 반환</button>
+                        </fieldset>
+
+                        <fieldset class="wrap-insert_money">
+                            <legend class="screen_out">금액 투입 영역</legend>
+                            <input id="inpInsertMoney" class="inp-insert_money" type="number" placeholder="입금액 입력" />
+                            <label for="inpInsertMoney" class="screen_out">투입할 금액</label>
+                            <button class="btn-insert_money btn" type="submit">입금</button>
+                        </fieldset>
+
+                        <fieldset class="wrap-my_cart">
+                            <legend class="screen_out">장바구니 영역</legend>
+                            <ol class="my_cart">
+                                <li class="items-my_cart">
+                                    <img class="img-item" src="images/Original_Cola_2x.png" alt="" />
+                                    <p class="txt-item_name">Original_Cola</p>
+                                    <span id="itemQuantity" class="txt-item_quantity">1</span>
+                                </li>
+                            </ol>
+                            <button class="btn-purchase btn">획득</button>
+                        </fieldset>
+                    </form>
+                </section>
+                <section class="wallet">
+                    <div class="money">
+                        <span class="txt-left">소지금 :</span>
+                        <span class="txt-right"></span>
+                    </div>
+                </section>
+                <section class="purchased">
+                    <h3 class="txt-purchased_items">획득한 음료</h3>
+                    <ol class="section-purchased_items">
+                        <li class="purchased_items">
+                            <img class="img-item" src="images/original_cola_2x.png" alt="" />
+                            <p class="txt-item_name">Original_Cola</p>
+                            <span class="txt-item_quantity">1</span>
+                        </li>
+                        <li class="purchased_items">
+                            <img class="img-item" src="images/original_cola_small.png" alt="" />
+                            <p class="txt-item_name">Original_Cola</p>
+                            <span class="txt-item_quantity">1</span>
+                        </li>
+                        <li class="purchased_items">
+                            <img class="img-item" src="images/original_cola_small.png" alt="" />
+                            <p class="txt-item_name">Original_Cola</p>
+                            <span class="txt-item_quantity">1</span>
+                        </li>
+                        <li class="purchased_items">
+                            <img class="img-item" src="images/original_cola_small.png" alt="" />
+                            <p class="txt-item_name">Original_Cola</p>
+                            <span class="txt-item_quantity">1</span>
+                        </li>
+                    </ol>
+                    <p class="txt-spent_money">총 금액 : 9,000원</p>
+                </section>
+            </article>
+        </main>
+
+        <script src="app.js"></script>
+    </body>
 </html>

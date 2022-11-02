@@ -19,6 +19,8 @@ button, input {
 /* header */
 .header-cola {
   background-color: burlywood;
+  width: 748px;
+  margin: 0 auto;
   text-align: center;
   margin-bottom: 68px;
 }
@@ -38,7 +40,7 @@ button, input {
 .kiosk {
   background-color: tomato;
   display: grid;
-  width:fit-content;
+  width: fit-content;
   margin: 0 auto;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 50px 474px;
@@ -62,7 +64,7 @@ button, input {
 }
 
 .vending_machine .section-drink_items {
-  background-color: brown;
+  /* background-color: brown; */
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
@@ -76,15 +78,17 @@ button, input {
 .vending_machine .section-drink_items .drink_items {
   width: 94px;
   height: 130px;
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   box-sizing: border-box;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
   /* border-radius: 10px; */
   /* overflow: hidden; */
 }
 
+
 .section-drink_items .drink_items .btn-drink_items {
-  background-color: dodgerblue;
+  /* background-color: dodgerblue; */
+  background-color: white;
   height: 100%;
   width: 100%;
   padding: 9px 11px;
@@ -100,17 +104,7 @@ button, input {
   outline: 3px solid #6327FE;
 }
 
-.section-drink_items .drink_items figure {
-  /* background-color: burlywood; */
-  height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.drink_items figure .img-item {
+.drink_items .img-item {
   width: 36px;
   height: 65px;
 }
@@ -130,22 +124,37 @@ button, input {
   margin-top: 7px;
 }
 
+.sold_out::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: url(images/soldout_2x.png);
+  background-size: 62px 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .vending_machine .section-purchase {
   background-color: yellow;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: 33px 33px 106px;
   grid-template-areas:
-    'balance btn-change'
-    'form-pay form-pay'
-    'my_cart btn-purchase';
+    'balance_change'
+    'insert_money'
+    'my_cart';
   gap: 12px;
 }
 
 /* design */
 .balance,
 .btn,
-.input-pay,
+.inp-insert_money,
 .my_cart,
 .items-my_cart,
 .wallet .money,
@@ -158,7 +167,7 @@ button {
   cursor: pointer;
 }
 
-.btn-change, .btn-pay {
+.btn-change, .btn-insert_money {
   background-color: white;
   filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
   font-size: 13 px;
@@ -171,7 +180,7 @@ button {
   color: white;
 }
 
-.input-pay {
+.inp-insert_money {
   padding: 6px;
   font-size: 13px;
   line-height: 19px;
@@ -179,6 +188,18 @@ button {
   box-sizing: border-box;
 }
 /* design */
+
+.section-purchase .wrap-balance_change,
+.section-purchase .wrap-insert_money,
+.section-purchase .wrap-my_cart {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+}
+
+.section-purchase .wrap-balance-change {
+  grid-area: balance_change;
+}
 
 .vending_machine .section-purchase .balance {
   background-color: #EAE8FE;
@@ -190,11 +211,12 @@ button {
   line-height: 20px;
 }
 
-.vending_machine .section-purchase .form-pay {
-  grid-area: form-pay;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 12px;
+.vending_machine .section-purchase .wrap-insert_money {
+  grid-area: insert_money;
+}
+
+.section-purchase .wrap-my_cart {
+  grid-area: my_cart;
 }
 
 /* 아이템 이름이 길어질 경우 어떻게 대처할 건지? */
@@ -217,7 +239,12 @@ button {
   padding: 8px;
 }
 
-.section-purchase .my_cart .items-my_cart .inp-item_quantity {
+.my_cart .items-my_cart img {
+  width: 18px;
+  height: 33px;
+}
+
+.section-purchase .my_cart .items-my_cart .txt-item_quantity {
   width: 30px;
   height: 30px;
   border: 1px solid #BDBDBD;
@@ -228,6 +255,9 @@ button {
   /* justify-self: flex-end; flexbox에 justify-self는 없다. 대신 margin으로 조절이 가능하다. */
   margin-left: auto;
   font-size: 14px;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 3px 10px 5px;
   font-weight: 500;
 }
 
@@ -297,6 +327,11 @@ button {
   align-items: center;
   gap: 18px;
   padding: 6px 8px 7px 10px;
+}
+
+.section-purchased_items .purchased_items img {
+  width: 18px;
+  height: 33px;
 }
 
 .section-purchased_items .purchased_items .txt-item_quantity {
