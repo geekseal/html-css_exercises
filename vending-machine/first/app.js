@@ -1,4 +1,9 @@
-// 자판기 음료 배치
+// 기본 DOM
+const $vendingMachine = document.querySelector(".vending_machine");
+const $wallet = document.querySelector(".wallet");
+const $purchased = document.querySelector(".purchased");
+
+// 판매할 음료
 const colaList = [
     { name: "Original_Cola", alt: "오리지널 콜라", price: 1000, quantity: 10 },
     { name: "Violet_Cola", alt: "바이올렛 콜라", price: 1000, quantity: 10 },
@@ -8,7 +13,8 @@ const colaList = [
     { name: "Orange_Cola", alt: "오렌지 콜라", price: 1000, quantity: 10 },
 ];
 
-const $drinkItems = document.querySelectorAll(".drink_items");
+// 자판기 음료 배치
+const $drinkItems = $vendingMachine.querySelectorAll(".drink_items");
 
 [...$drinkItems].forEach((item, i) => {
     const $itemImage = item.querySelector(".img-item");
@@ -21,11 +27,6 @@ const $drinkItems = document.querySelectorAll(".drink_items");
 });
 
 // 소지금, 입금
-let inMyWallet = 25000;
-const $wallet = document.querySelector(".wallet");
-const $inMyWallet = $wallet.querySelector(".txt-right");
-$inMyWallet.textContent = `${addComma(inMyWallet)} 원`;
-
 function addComma(int) {
     const intToArray = int.toString().split("");
     for (let i = intToArray.length - 3; i > 0; i -= 3) {
@@ -34,19 +35,61 @@ function addComma(int) {
     return intToArray.join("");
 }
 
-let balance = 0;
-let insertedMoney = 0;
+class Builder {
+    constructor(seedMoney) {
+        this.seedMoney = seedMoney;
+        this.readyMoney = seedMoney;
+        this.insertedMoney = 0;
+        this.balance = 0;
+    }
 
-const $formInsertMoney = document.querySelector(".form-insert_money");
-const $inpInsertMoney = $formInsertMoney.querySelector(".inp-insert_money");
-const $btnInsertMoney = $formInsertMoney.querySelector(".btn-insert_money");
-const $balance = document.querySelector(".balance > .txt-right");
+    $btnInsertMoney = $vendingMachine.querySelector(".btn-insert_money");
+    $inpInsertMoney = $vendingMachine.querySelector(".inp-insert_money");
+    $btnReturnChange = $vendingMachine.querySelector(".btn-change");
+    $balance = $vendingMachine.querySelector(".balance > .txt-right");
+    $inMyWallet = $wallet.querySelector(".txt-right");
 
-$btnInsertMoney.addEventListener("click", () => {
-    inMyWallet -= $inpInsertMoney.getAttribute("value");
-    insertedMoney += $inpInsertMoney.getAttribute("value");
-    balance += insertedMoney;
+    activate() {
+        this.$btnInsertMoney.addEventListener("click", this.insertMoney.bind(this));
+        this.$btnReturnChange.addEventListener("click", this.returnChange.bind(this));
+    }
 
-    $inMyWallet.textContent = `${addComma(inMyWallet)} 원`;
-    $balance.textContent = `${addComma(balance)} 원`;
-});
+    insertMoney() {
+        if (parseInt(this.$inpInsertMoney.value) > this.readyMoney) {
+            alert("소지금을 초과하였습니다.");
+            this.$inpInsertMoney.value = null;
+        } else if (parseInt(this.$inpInsertMoney.value) <= 0) {
+            alert("0과 음수는 입금이 불가능합니다.");
+            this.$inpInsertMoney.value = null;
+        } else {
+            this.readyMoney -= parseInt(this.$inpInsertMoney.value);
+            this.insertedMoney += parseInt(this.$inpInsertMoney.value);
+            this.balance += parseInt(this.insertedMoney);
+            this.updateBalance();
+            this.updateReadyMoney();
+            this.$inpInsertMoney.value = null;
+            this.insertedMoney = 0;
+        }
+    }
+
+    returnChange() {
+        this.readyMoney += this.balance;
+        this.balance = 0;
+        this.updateBalance();
+        this.updateReadyMoney();
+    }
+
+    updateBalance() {
+        this.$balance.textContent = `${addComma(this.balance)} 원`;
+    }
+
+    updateReadyMoney() {
+        this.$inMyWallet.textContent = `${addComma(this.readyMoney)} 원`;
+    }
+
+    pickItem() {}
+}
+
+const machine = new Builder(25000);
+machine.updateReadyMoney(machine.seedMoney);
+machine.activate();
