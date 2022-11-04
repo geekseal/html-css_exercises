@@ -3,8 +3,8 @@ class ColaGenerator {
         this.itemList = document.querySelector(".list-item");
     }
 
-    setUp() {
-        this.loadData(json => {
+    async setUp() {
+        await this.loadData(json => {
             this.colaFactory(json);
         });
         // json 매개변수를 전달하기 위해 콜백 형태로 작성
