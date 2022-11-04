@@ -23,6 +23,15 @@ class VendingMachine {
     stagedItemGenerator(target) {
         const stagedItem = document.createElement("li");
         stagedItem.dataset.item = target.dataset.item;
+        stagedItem.dataset.price = target.dataset.price;
+        stagedItem.innerHTML = `
+        <button type="button" class="btn-staged">
+            <img src="./src/images/${target.dataset.img}" alt="" class="img-item">
+            <strong class="txt-item">${target.dataset.item}</strong>
+            <span class="num-counter">1</span>
+        </button>
+        `;
+        this.stagedList.appendChild(stagedItem);
     }
 
     bindEvents() {
@@ -85,13 +94,63 @@ class VendingMachine {
                 if (balanceVal >= targetElPrice) {
                     this.balance.textContent = new Intl.NumberFormat().format(balanceVal - targetElPrice) + " 원";
 
+                    for (const item of stagedListItem) {
+                        if (item.dataset.item === targetEl.dataset.item) {
+                            item.querySelector(".num-counter").textContent++;
+                            isStaged = true;
+                            break;
+                        }
+                    }
+
                     if (!isStaged) {
                         this.stagedItemGenerator(targetEl);
+                    }
+
+                    targetEl.dataset.count--;
+
+                    if (parseInt(targetEl.dataset.count) === 0) {
+                        targetEl.parentElement.classList.add("sold-out");
+                        const warning = document.createElement("em");
+                        warning.textContent = "해당 상품은 품절입니다.";
+                        warning.classList.add("ir");
+                        targetEl.parentElement.insertBefore(warning, targetEl);
                     }
                 } else {
                     alert("잔액이 부족합니다. 돈을 입금해주세요.");
                 }
             });
+        });
+
+        /**
+         * 4. 획득 버튼 기능
+         * 획득 버튼을 누르면 선택한 음료수 목록이 획득한 음료 목록으로 이동합니다.
+         * 획득한 음료의 금액을 모두 합하여 총금액을 업데이트 합니다.
+         */
+        this.btnGet.addEventListener("click", event => {
+            let isGot = false;
+            let totalPrice = 0;
+
+            for (const itemStaged of this.stagedList.querySelectorAll("li")) {
+                for (const itemGot of this.gotList.querySelectorAll("li")) {
+                    let itemGotCount = itemGot.querySelector(".num-counter");
+                    if (itemStaged.dataset.item === itemGot.dataset.item) {
+                        itemGotCount.textContent = parseInt(itemGotCount.textContent) + parseInt(itemStaged.querySelector(".num-counter").textContent);
+                        isGot = true;
+                        break;
+                    }
+                }
+
+                if (!isGot) {
+                    this.gotList.appendChild(itemStaged);
+                }
+            }
+
+            this.stagedList.innerHTML = null;
+
+            this.gotList.querySelectorAll("li").forEach(itemGot => {
+                totalPrice += itemGot.dataset.price * parseInt(itemGot.querySelector(".num-counter").textContent);
+            });
+            this.txtTotal.textContent = `총 금액: ${new Intl.NumberFormat().format(totalPrice)} 원`;
         });
     }
 }

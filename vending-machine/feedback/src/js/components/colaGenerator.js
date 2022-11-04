@@ -37,7 +37,7 @@ class ColaGenerator {
         data.forEach(item => {
             const items = document.createElement("li");
             const itemTemplate = `
-            <button type="button" class="btn-item" data-name="${item.name}" data-inStock="${item.inStock}" data-price="${item.price}" data-img="${item.img}">
+            <button type="button" class="btn-item" data-item="${item.name}" data-count="${item.inStock}" data-price="${item.price}" data-img="${item.img}">
                 <img src="src/images/${item.img}" alt="" class="img-item" />
                 <strong class="tit-item">${item.name}</strong>
                 <span class="txt-price">${item.price}원</span>
